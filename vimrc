@@ -30,6 +30,7 @@ Plugin 'sickill/vim-monokai'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'rust-lang/rust.vim'
 Plugin 'arcticicestudio/nord-vim'
+Plugin 'flazz/vim-colorschemes'
 
 " Bundle 'christoomey/vim-titlecase'
 
@@ -79,6 +80,15 @@ let mapleader = " "
 
 " set highlight search on
 set hlsearch
+
+" vim-go highlight settings
+
+let g:go_highlight_types = 1
+" let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+" let g:go_highlight_function_calls = 1
+" let g:go_highlight_extra_types = 1
+" let g:go_highlight_operators = 1
 
 " run go-imports on save
 let g:go_fmt_command = "goimports"
@@ -133,8 +143,9 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 syntax on
-colorscheme nord
-" set background=dark
+let g:gruvbox_italic=1
+colorscheme gruvbox
+set background=dark
 
 " show relative numbers
 set relativenumber
@@ -193,7 +204,11 @@ let g:DevIconsEnableFoldersOpenClose = 1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 
 " Make the background transparent
-" hi Normal guibg=NONE ctermbg=NONE
+hi Normal guibg=NONE ctermbg=NONE
+
+if has('termguicolors')
+  set termguicolors
+endif
 
 function! StartUp()
   if 0 == argc()

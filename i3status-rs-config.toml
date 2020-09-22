@@ -1,0 +1,72 @@
+theme = "native"
+icons = "awesome"
+
+[[block]]
+block = "disk_space"
+path = "/"
+alias = "/"
+info_type = "available"
+unit = "GB"
+interval = 20
+warning = 20.0
+alert = 10.0
+
+[[block]]
+block = "disk_space"
+path = "/home/vali/"
+alias = "~/"
+info_type = "available"
+unit = "GB"
+interval = 20
+warning = 20.0
+alert = 10.0
+
+[[block]]
+block = "disk_space"
+path = "/storage/"
+alias = "+"
+info_type = "available"
+unit = "GB"
+interval = 20
+warning = 20.0
+alert = 10.0
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{Mup}%"
+format_swap = "{SUp}%"
+
+[[block]]
+block = "cpu"
+interval = 1
+
+[[block]]
+block = "load"
+interval = 1
+format = "{1m}"
+
+[[block]]
+block = "networkmanager"
+on_click = "alacritty -e nmtui"
+interface_name_exclude = ["br\\-[0-9a-f]{12}", "docker\\d+"]
+interface_name_include = []
+device_format = "{icon}{ap}"
+
+[[block]]
+block = "battery"
+driver = "upower"
+format = "{percentage}%"
+
+[[block]]
+block = "sound"
+
+[[block]]
+block = "keyboard_layout"
+driver = "sway"
+sway_kb_identifier = "1452:610:Apple_Inc._Apple_Internal_Keyboard_/_Trackpad"
+
+[[block]]
+block = "time"
+interval = 60
+format = "%a %d/%m %R"
