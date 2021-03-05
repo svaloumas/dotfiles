@@ -7,7 +7,7 @@ export PATH="$PATH:$HOME/go/bin"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # Default programs:
-export EDITOR="vim"
+export EDITOR="nvim"
 export TERMINAL="alacritty"
 export BROWSER="firefox"
 export READER="zathura"
@@ -37,7 +37,7 @@ export LESS_TERMCAP_se="$(printf '%b' '[0m')"
 export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"
 export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
 
-export TERM=screen-256color
+export TERM=xterm-256color
 export GPG_AGENT_INFO=$HOME/.gnupg/S.gpg-agent
 export GST_VAAPI_ALL_DRIVERS=1
 
