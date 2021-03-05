@@ -60,6 +60,11 @@ nnoremap <C-H> <C-W><C-H>
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
+" Tabs
+ca tn tabnew
+ca th tabp
+ca tl tabn
+
 " Optionally reset the cursor on start:
 augroup myCmds
 au!
