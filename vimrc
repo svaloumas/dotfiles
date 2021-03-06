@@ -86,6 +86,9 @@ let mapleader = " "
 " set highlight search on
 set hlsearch
 
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 " vim-go highlight settings
 
 let g:go_highlight_types = 1
@@ -108,7 +111,7 @@ let g:go_auto_type_info = 1
 let g:rustfmt_autosave = 1
 
 " set spellchecking on
-" set spell spelllang=en_us
+set spell spelllang=en_us
 
 " check spelling mappings
 
@@ -127,7 +130,7 @@ set foldmethod=indent
 set foldlevel=99
 
 " Enable folding with the spacebar
-nnoremap <space> za
+" nnoremap <space> za
 
 " nmap <leader>gc <Plug>Titlecase
 " vmap <leader>gc <Plug>Titlecase
