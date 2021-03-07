@@ -78,7 +78,7 @@ set history=100
 set tags+=$HOME/projects/
 
 " set encoding
-set encoding=UTF-8
+set encoding=utf-8
 
 " set mapleader
 let mapleader = " "
@@ -86,7 +86,17 @@ let mapleader = " "
 " set highlight search on
 set hlsearch
 
-let g:ycm_autoclose_preview_window_after_completion=1
+" python vim settings
+au BufNewFile,BufRead *.py 
+    \ set tabstop=4
+    \| set softtabstop=4
+    \| set shiftwidth=4
+    \| set textwidth=79
+    \| set expandtab
+    \| set autoindent
+    \| set fileformat=unix
+
+" let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " vim-go highlight settings
@@ -150,6 +160,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+let python_highlight_all=1
 syntax on
 let g:gruvbox_italic=1
 colorscheme gruvbox
