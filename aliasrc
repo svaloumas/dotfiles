@@ -8,32 +8,20 @@ alias \
 	mkd="mkdir -pv" \
 	yt="youtube-dl --add-metadata -i" \
 	yta="yt -x -f bestaudio/best" \
-	ffmpeg="ffmpeg -hide_banner"
 
 # Colorize commands when possible.
 alias \
 	ls="ls -hN --color=auto --group-directories-first" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
-	ccat="highlight --out-format=ansi"
 
 # These common commands are just too long! Abbreviate them.
 alias \
 	ka="killall" \
-	trem="transmission-remote" \
 	sdn="sudo shutdown -h now" \
 	f="$FILE" \
 	apt-get="sudo apt-get" \
-	xi="sudo xbps-install" \
-	xr="sudo xbps-remove -R" \
-	xq="xbps-query" \
         reboot="sudo reboot"
-
-# This alias is important. It enables the `pauseallmpv` command.
-alias mpv="mpv --input-ipc-server=/tmp/mpvsoc$(date +%s)"
-
-# # python alias
-# alias python=/usr/bin/python3
 
 # Custom aliases
 alias edzsh="vim ~/.zshrc"
