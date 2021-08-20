@@ -9,7 +9,7 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-" Plugin 'VundleVim/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " My Plugins
 Plugin 'tmhedberg/SimpylFold'
@@ -25,14 +25,9 @@ Plugin 'mattn/vim-goimports'
 Plugin 'fatih/vim-go'
 Plugin 'morhetz/gruvbox'
 Plugin 'ryanoasis/vim-devicons'
-Plugin 'gosukiwi/vim-atom-dark'
-Plugin 'sickill/vim-monokai'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'rust-lang/rust.vim'
-Plugin 'arcticicestudio/nord-vim'
-Plugin 'flazz/vim-colorschemes'
-
-" Bundle 'christoomey/vim-titlecase'
+Plugin 'davidhalter/jedi-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -132,8 +127,8 @@ nnoremap <leader>s :set spell!
 nnoremap <C-N> :nohlsearch<CR>
 
 " Execute Python programs with F9 and Go programs with F10
-nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
-nnoremap <buffer> <F10> :exec '!go run' shellescape(@%, 1)<cr>
+" nnoremap <buffer> <F9> :exec '!python3' shellescape(@%, 1)<cr>
+" nnoremap <buffer> <F10> :exec '!go run' shellescape(@%, 1)<cr>
 
 " Enable folding
 set foldmethod=indent
@@ -167,7 +162,7 @@ colorscheme gruvbox
 set background=dark
 
 " show relative numbers
-set relativenumber
+" set relativenumber
 
 " Turn on line numbers on the side of the screen
 set nu

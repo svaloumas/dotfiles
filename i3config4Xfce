@@ -1,7 +1,7 @@
 # This config file will use environmental variables such as $BROWSER and $TERMINAL.
 # You can set these variables in ~/.profile
 #
-# export FILE="ranger"
+# export FILE="$FILE"
 # export TERMINAL="urxvt"
 
 # #---Basic Definitions---# #
@@ -29,17 +29,17 @@ for_window [instance="dropdown_*"] move position center
 # shadows and transitions with compton
 exec --no-startup-id picom --config ~/.config/compton.conf -b
 
-# enable touchpad gestures
-exec --no-startup-id libinput-gestures-setup start
+# background(s)
+exec --no-startup-id nitrogen --restore
 
 # merge Xresources
 exec --no-startup-id xrdb -merge ~/.Xresources
 
+# run clipmenud
+exec --no-startup-id clipmenud
+
 # disable wm check for xfce4 panel
 exec --no-startup-id xfce4-panel --disable-wm-check
-
-# run clipmenu daemon
-exec --no-startup-id clipmenud
 
 # #---Basic Bindings---# #
 bindsym $mod+Return	exec $term 
@@ -55,7 +55,7 @@ bindsym $mod+space		focus mode_toggle
 bindsym $mod+F4		        exec --no-startup-id prompt "Hibernate computer?" "$hibernate"
 bindsym $mod+Shift+BackSpace	exec --no-startup-id prompt "Reboot computer?" "$reboot"
 bindsym $mod+Shift+x		exec --no-startup-id prompt "Shutdown computer?" "$shutdown"
-bindsym $mod+x			exec --no-startup-id mpc pause && xset dpms force off && exec slock
+bindsym $mod+x			exec --no-startup-id xset dpms force off && exec slock
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+Shift+e layout stacking
@@ -91,7 +91,7 @@ bindsym $mod+Shift+i		exec --no-startup-id i3resize up
 bindsym $mod+o			sticky toggle
 bindsym $mod+Shift+o		exec --no-startup-id i3resize right
 
-bindsym $mod+p			exec --no-startup-id mpc toggle
+# bindsym $mod+p			exec --no-startup-id mpc toggle
 
 bindsym $mod+a			exec --no-startup-id xfce4-appfinder --collapsed
 bindsym $mod+Shift+a		exec $term -e pulsemixer
@@ -99,7 +99,7 @@ bindsym $mod+Shift+a		exec $term -e pulsemixer
 bindsym $mod+s			gaps inner current plus 5
 bindsym $mod+Shift+s		gaps inner current minus 5
 
-bindsym $mod+d			exec --no-startup-id dmenu_run -p 'Arch Linux' -fn ':JetBrainsMono\ Nerd\ Font:pixelsize=28'
+bindsym $mod+d			exec --no-startup-id dmenu_run -p 'Debian' -fn ':JetBrainsMono\ Nerd\ Font:pixelsize=16'
 bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
 
 set $freeze Distraction-free mode (super+shift+f to reactivate bindings)
@@ -135,7 +135,7 @@ bindsym $mod+Shift+z		gaps outer current minus 5
 bindsym --release $mod+c	exec scrot -s '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Pictures/Screenshots/'
 bindsym $mod+Shift+c		exec scrot '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Pictures/Screenshots/'
 
-bindsym $mod+v	                exec --no-startup-id clipmenu -i -fn Terminus:size=18 -nb '#002b36' -nf '#839496' -sb '#073642' -sf '#93a1a1'
+bindsym $mod+v	                exec --no-startup-id clipmenu -i -fn Terminus:size=14 -nb '#002b36' -nf '#839496' -sb '#073642' -sf '#93a1a1'
 bindsym $mod+Shift+v            exec scrot -u '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Pictures/Screenshots/'
 
 # bindsym $mod+b			bar mode toggle
@@ -143,7 +143,7 @@ bindsym $mod+Shift+b		floating toggle; sticky toggle; exec --no-startup-id hover
 
 bindsym $mod+Shift+n		floating toggle; sticky toggle; exec --no-startup-id hover right
 
-bindsym $mod+m 			exec --no-startup-id $term -e ncmpcpp
+# bindsym $mod+m 			exec --no-startup-id $term -e ncmpcpp
 bindsym $mod+Shift+m		exec --no-startup-id amixer sset Master toggle && pkill -RTMIN+10 i3blocks
 
 # #---Workspace Bindings---# #
@@ -222,13 +222,13 @@ bindsym $mod+Ctrl+Right		move workspace to output right
 # Volume keys
 bindsym $mod+Shift+plus		exec --no-startup-id amixer sset Master 15%+ && pkill -RTMIN+10 i3blocks
 bindsym $mod+Shift+minus	exec --no-startup-id amixer sset Master 15%- && pkill -RTMIN+10 i3blocks
-bindsym $mod+Shift+greater	exec --no-startup-id mpc next
+# bindsym $mod+Shift+greater	exec --no-startup-id mpc next
 
-# For advancing forward/backward in an mpd song
-bindsym $mod+bracketleft 	exec --no-startup-id mpc seek -10
-bindsym $mod+Shift+bracketleft 	exec --no-startup-id mpc seek -120
-bindsym $mod+bracketright 	exec --no-startup-id mpc seek +10
-bindsym $mod+Shift+bracketright exec --no-startup-id mpc seek +120
+# Free to implement
+# bindsym $mod+bracketleft 	exec --no-startup-id mpc seek -10
+# bindsym $mod+Shift+bracketleft 	exec --no-startup-id mpc seek -120
+# bindsym $mod+bracketright 	exec --no-startup-id mpc seek +10
+# bindsym $mod+Shift+bracketright exec --no-startup-id mpc seek +120
 
 # #---Extra XF86 Keys---# #
 bindsym XF86AudioMute		exec --no-startup-id amixer sset Master toggle
@@ -257,9 +257,9 @@ bindsym XF86TouchpadOn		exec --no-startup-id synclient TouchpadOff=0
 bindsym XF86TouchpadOff		exec --no-startup-id synclient TouchpadOff=1
 bindsym XF86Suspend		exec --no-startup-id lockscreen
 bindsym XF86Close		kill
-bindsym XF86MonBrightnessDown	exec --no-startup-id light -U 10
-bindsym XF86MonBrightnessUp	exec --no-startup-id light -A 10
-bindsym XF86AudioMedia		exec --no-startup-id $term -e ncmpcpp
+bindsym XF86MonBrightnessDown	exec --no-startup-id light -U 5
+bindsym XF86MonBrightnessUp	exec --no-startup-id light -A 5
+# bindsym XF86AudioMedia		exec --no-startup-id $term -e ncmpcpp
 bindsym XF86Display		exec --no-startup-id displayselect
 bindsym XF86KbdBrightnessDown	exec --no-startup-id light -s sysfs/leds/smc::kbd_backlight -U 15
 bindsym XF86KbdBrightnessUp	exec --no-startup-id light -s sysfs/leds/smc::kbd_backlight -A 15
@@ -267,7 +267,7 @@ bindsym XF86Documents		exec $term -e $FILE ~/Documents
 bindsym XF86WLAN		exec $netrefresh
 
 # #---Rofi shortcuts---# #
-bindsym $mod+n exec --no-startup-id rofi -font "Inconsolata 22" -combi-modi window#drun -show combi -modi combi
+bindsym $mod+n exec --no-startup-id rofi -font "Inconsolata 12" -combi-modi window#drun -show combi -modi combi
 
 # Border settings
 client.focused #586e75 #586e75 #fdf6e3 #268bd2
