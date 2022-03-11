@@ -14,6 +14,12 @@ fn + alt - 3 : "${HOME}"/.config/yabai/scripts/show_bat.sh
 fn + alt - 4 : "${HOME}"/.config/yabai/scripts/show_disk.sh
 fn + alt - 5 : "${HOME}"/.config/yabai/scripts/show_song.sh
 
+# Layout
+lctrl + lalt - s : yabai -m space --layout stack
+lctrl + lalt - b : yabai -m space --layout bsp
+shift + lalt - o : yabai -m window --focus stack.next
+shift + lalt - i : yabai -m window --focus stack.prev
+
 # Navigation
 alt - h : yabai -m window --focus west
 alt - j : yabai -m window --focus south
