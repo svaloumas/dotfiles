@@ -24,6 +24,7 @@ Plugin 'mattn/vim-goimports'
 Plugin 'fatih/vim-go'
 Plugin 'morhetz/gruvbox'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'arcticicestudio/nord-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -77,6 +78,9 @@ let mapleader = " "
 " set highlight search on
 set hlsearch
 
+" SimpylFold settings
+let g:SimpylFold_docstring_preview = 1
+
 " vim-go highlight settings
 
 let g:go_highlight_types = 1
@@ -96,7 +100,7 @@ let g:go_def_mode='gopls'
 let g:go_auto_type_info = 1
 
 " set spellchecking on
-set spell spelllang=en_us
+" set spell spelllang=en_us
 
 " check spelling mappings
 
@@ -133,7 +137,7 @@ let g:syntastic_check_on_wq = 0
 let python_highlight_all=1
 syntax on
 let g:gruvbox_italic=1
-colorscheme gruvbox
+colorscheme nord
 set background=dark
 
 " show relative numbers
