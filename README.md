@@ -2,20 +2,56 @@
 
 Included files:
 
-* i3config (Xfce4)
-* alacritty.yml
-* alacritty-cwd
-* aliasrc
-* libinput-gestures.conf
-* profile
-* vimrc
-* compton.conf
-* Xresources
-* ranger/rc.conf
-* ranger/rifle.conf
-* ranger/scope.sh
-* ranger/commands_full.py
-* ranger/luke_ranger_readme.md
-* ranger/shortcuts.conf
-* X11config/00-keyboard.conf
-* X11config/20-intel.conf
+```bash
+$ tree                                                                                                                                                                                                                                                                                                                                                 [±master ●●]
+.
+├── README.md
+├── endeavouros-sway
+│   ├── default
+│   ├── environment
+│   ├── input
+│   ├── output
+│   └── theme
+└── macos
+    ├── neofetch
+    │   └── config.conf
+    ├── nvim
+    │   ├── init.lua
+    │   ├── lua
+    │   │   └── svaloumas
+    │   │       ├── core
+    │   │       │   ├── colorscheme.lua
+    │   │       │   ├── keymaps.lua
+    │   │       │   └── options.lua
+    │   │       ├── plugins
+    │   │       │   ├── autopairs.lua
+    │   │       │   ├── bufferline.lua
+    │   │       │   ├── comment.lua
+    │   │       │   ├── gitsigns.lua
+    │   │       │   ├── impatient.lua
+    │   │       │   ├── lsp
+    │   │       │   │   ├── lspconfig.lua
+    │   │       │   │   ├── lspsaga.lua
+    │   │       │   │   ├── mason.lua
+    │   │       │   │   └── null-ls.lua
+    │   │       │   ├── lualine.lua
+    │   │       │   ├── nvim-cmp.lua
+    │   │       │   ├── nvim-tree.lua
+    │   │       │   ├── telescope.lua
+    │   │       │   ├── toggleterm.lua
+    │   │       │   └── treesitter.lua
+    │   │       └── plugins-setup.lua
+    │   └── plugin
+    │       └── packer_compiled.lua
+    ├── ranger
+    │   ├── rc.conf
+    │   └── rifle.conf
+    ├── skhd
+    │   └── skhdrc
+    ├── yabai
+    │   └── yabairc
+    └── zathura
+        └── zathurarc
+
+14 directories, 33 files
+```
