@@ -1,0 +1,6 @@
+alias nf="neofetch"
+alias rm="rm -iv"
+alias mkd="mkdir -p"
+alias p="sudo pacman"
+alias vim="nvim"
+alias sdn="sudo shutdown -h now"

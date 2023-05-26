@@ -7,6 +7,10 @@ set $down j
 set $up k
 set $right l
 
+# gaps config
+bindsym $mod+Shift+z gaps inner all minus 5
+bindsym $mod+z gaps inner all plus 5
+
 # audio control
 set $sink_volume pactl get-sink-volume @DEFAULT_SINK@ | grep '^Volume:' | cut -d / -f 2 | tr -d ' ' | sed 's/%//'
 set $source_volume pactl get-source-volume @DEFAULT_SOURCE@ | grep '^Volume:' | cut -d / -f 2 | tr -d ' ' | sed 's/%//'
@@ -22,7 +26,8 @@ set $term-float /home/vali/.cargo/bin/alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu wofi -c ~/.config/wofi/config -I
+# set $menu wofi -c ~/.config/wofi/config -I
+set $menu bemenu-run -b --fn $uifont -b -p "▶" --tf "$prompt" --hf "$highlight" --sf "$highlight" --scf "$highlight" | xargs swaymsg exec
 
 set $powermenu ~/.config/waybar/scripts/power-menu.sh
 
@@ -220,6 +225,7 @@ bindsym $mod+r mode "resize"
     bindsym $mod+n exec thunar
     bindsym $mod+w exec firefox
     bindsym $mod+o exec $term-float -e ranger
+    bindsym $mod+m exec $term-float -e neomutt
 #
 # Screenshots
 #

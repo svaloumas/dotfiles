@@ -15,7 +15,14 @@ font pango:Noto Sans Regular 10
 smart_borders on
 
 # Set wallpaper:
-exec swaybg -i /usr/share/endeavouros/backgrounds/eos_wallpapers_community/sgs_1_quiet_before_the_storm.jpg
+# exec swaybg -i /usr/share/endeavouros/backgrounds/eos_wallpapers_community/sgs_1_quiet_before_the_storm.jpg
+
+# exec swaybg -i /usr/share/endeavouros/backgrounds/eos_wallpapers_community/shjim_2_arc_dark_endeavouros_endless_possibilites.png
+
+# exec swaybg -i /usr/share/endeavouros/backgrounds/eos_wallpapers_classic/EndeavourOS_purple_blue.jpg
+# exec swaybg -i /home/vali/Pictures/himalayas-mountains-landscape-4k-f3.jpg
+# exec swaybg -i /home/vali/Pictures/earth.jpg
+exec swaybg -i /usr/share/endeavouros/backgrounds/eos_wallpapers_classic/endeavouros-wallpaper-april-2021.png
 
 # Title format for windows
 for_window [shell="xdg_shell"] title_format "%title (%app_id)"
