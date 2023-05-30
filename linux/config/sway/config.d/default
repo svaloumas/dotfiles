@@ -21,7 +21,8 @@ set $mic_mute $(pactl set-source-mute @DEFAULT_SOURCE@ toggle && pactl get-sourc
 
 # Your preferred terminal emulators
 #set $term-float xfce4-terminal
-set $term-float /home/vali/.cargo/bin/alacritty
+#set $term-float /home/vali/.cargo/bin/alacritty
+set $term-float /usr/bin/footclient
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
@@ -30,6 +31,14 @@ set $term-float /home/vali/.cargo/bin/alacritty
 set $menu bemenu-run -b --fn $uifont -b -p "▶" --tf "$prompt" --hf "$highlight" --sf "$highlight" --scf "$highlight" | xargs swaymsg exec
 
 set $powermenu ~/.config/waybar/scripts/power-menu.sh
+
+### Foot server init
+exec /usr/bin/foot --server
+
+### clipman init
+exec wl-paste -t text --watch clipman store --no-persist
+exec clipman restore
+bindsym $mod+y exec clipman pick --tool wofi -T'--prompt=clipboard -i'
 
 ### Idle configuration
 exec swayidle -w\
@@ -160,7 +169,7 @@ exec swayidle -w\
 
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $mod+minus scratchpad show
+    bindsym $mod+Shift+s scratchpad show
 #
 # Resizing containers:
 #
@@ -205,6 +214,10 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86AudioRaiseVolume exec $volume_up
     bindsym --locked XF86AudioLowerVolume exec $volume_down
     bindsym --locked XF86AudioMute exec $volume_mute
+    # Control volume from keyboards with no audio related keys
+    bindsym $mod+equal exec $volume_up
+    bindsym $mod+minus exec $volume_down
+    bindsym $mod+Shift+m exec $volume_mute
 #
 # Player
 #
