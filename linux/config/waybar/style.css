@@ -170,12 +170,14 @@ Arc-Dark Color Scheme
     border-bottom: 3px solid transparent;
     margin-bottom: 0px;
     padding:0px;
+    color: gray;
 }
 
 #workspaces button.focused {
     border-bottom: 3px solid  @highlight;
     margin-bottom: 1px;
     padding-left:0;
+    color: white;
 }
 
 #workspaces button.urgent {

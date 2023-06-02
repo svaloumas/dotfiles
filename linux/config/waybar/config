@@ -4,7 +4,7 @@
     "position": "top",
 
     // If height property would be not present, it'd be calculated dynamically
-    //"height": 30,
+    "height": 20,
 
     "modules-left": [
         "custom/launcher",
@@ -20,15 +20,16 @@
         // "idle_inhibitor",
         "memory",
         "cpu",
+        "custom/cputemp",
         "pulseaudio",
         "custom/keyboard-layout",
         "battery",
         //"custom/PBPbattery",
         "backlight#icon",
         "backlight#value",
+        "custom/weather",
         "clock",
         "tray",
-        //"custom/weather",
         "custom/power",
     ],
 
@@ -76,7 +77,7 @@
             "warning": 70,
             "critical": 90,
         },
-        "on-click": "xfce4-terminal -e 'htop'",
+        "on-click": "footclient -e 'htop'",
     },
 
     "custom/keyboard-layout": {
@@ -92,8 +93,8 @@
 
     "memory": {
         "interval": 5,
-        "format": " {}%", // Icon: memory
-        "on-click": "xfce4-terminal -e 'htop'", 
+        "format": "   {}%", // Icon: memory
+        "on-click": "footclient -e 'htop'", 
         "states": {
             "warning": 70,
             "critical": 90
@@ -107,7 +108,7 @@
         "format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
         "format-disconnected": "⚠  Disconnected",
         "tooltip-format": "{ifname}: {ipaddr}",
-        "on-click": "xfce4-terminal -e 'nmtui'",
+        "on-click": "footclient -e 'nmtui'",
     },
     "network#vpn": {
         "interface": "tun0",
@@ -145,9 +146,9 @@
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon}  {format_source}",
         "format-bluetooth-muted": " {icon}  {format_source}",
-        "format-muted": "婢 {format_source}",
+        "format-muted": " ",
         "format-source": "{volume}% ",
-        "format-source-muted": "",
+        //"format-source-muted": "",
         "format-icons": {
             "headphone": "",
             "hands-free": "וֹ",
@@ -165,14 +166,15 @@
     // to use the weather module replace <your_location> with your city or town
     // note: do not use spaces: new york would be newyork
     "custom/weather": {
-        "exec": "~/.config/waybar/scripts/weather.sh <your_location>", 
+        "exec": "~/.config/waybar/scripts/weather.sh athens", 
+        "format":"Athens {}",
         "return-type": "json",
         "interval": 600,
     },
 
     "tray": {
-        "icon-size": 18,
-        "spacing":10,
+        "icon-size": 10,
+        "spacing":8,
      },
 
     "backlight#icon": {
@@ -216,5 +218,11 @@
         "format":"⏻",
         "on-click": "exec ~/.config/waybar/scripts/power-menu.sh",
         "tooltip": false,
+    },
+
+    "custom/cputemp": {
+        "exec": "sensors | grep -i 'core 0' | cut -d ':' -f 2 | sed 's/C.*/C/g' | tr -d ' '",
+        "interval": 5,
+        "format": "{}",
     },
 }
