@@ -1,6 +1,7 @@
 # Note: For MacbookPro11,2 integrated graphics to work with hardware acceleration the libva-intel-driver-g45-h264 is required
 # Note: The correct driver for the above mentioned intel graphics is the legacy mesa-amber
 # Note: For preview image method to work with ranger install libsixel from AUR
+# Note: For pdf preview to work with ranger uncomment the application/json in schope.sh and install poppler pkg
 
 abook 0.6.1-7
 abseil-cpp 20230125.1-2
