@@ -24,6 +24,10 @@ set $mic_mute $(pactl set-source-mute @DEFAULT_SOURCE@ toggle && pactl get-sourc
 #set $term-float /home/vali/.cargo/bin/alacritty
 set $term-float /usr/bin/footclient
 
+# Hide cursor
+seat * hide_cursor when-typing enable
+seat * hide_cursor 8000
+
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
